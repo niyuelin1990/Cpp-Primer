@@ -17,7 +17,7 @@ using std::vector; using std::string; using std::ifstream; using std::istringstr
 
 int main()
 {
-    ifstream ifs("../data/book.txt");
+    ifstream ifs("D:\\btcd\\btcctl.conf");
     if (!ifs)
     {
         cerr << "No data?" << endl;
@@ -35,6 +35,7 @@ int main()
         string word;
         while (iss >> word)
             cout << word << endl;
+        cout << s << endl;
     }
     
     return 0;

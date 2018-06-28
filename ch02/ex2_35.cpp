@@ -12,10 +12,11 @@ int main()
     // print i means int, and PKi means pointer to const int.
     std::cout   << "j is "      << typeid(j).name()
                 << "\nk is "    << typeid(k).name()
-                << "\np is "    << typeid(p).name()
+                << "\np is "    << typeid(p).name() //p 的类型推断结果是指向整型常量的指
                 << "\nj2 is "   << typeid(j2).name()
                 << "\nk2 is "   << typeid(k2).name()
                 << std::endl;
+
 
     return 0;
 }

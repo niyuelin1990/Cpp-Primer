@@ -3,10 +3,15 @@
 using std::string;
 using std::cout;
 using std::endl;
+using std::toupper;
 
 int main()
 {
     string str("a simple string");
+    for(char &c:str){
+        c = toupper(c);
+    }
+   cout << str << endl;
     
     // while
     decltype(str.size()) i = 0;

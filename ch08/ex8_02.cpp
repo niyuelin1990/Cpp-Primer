@@ -9,18 +9,25 @@
 #include <iostream>
 using std::istream;
 
-istream& func(istream &is)
+istream &func(istream &is)
 {
     std::string buf;
-    while (is >> buf)
+    while (is >> buf, !is.eof())
+    {
+        if (is.fail())
+        {
+            std::cout << "数据有误" << std::endl;
+        }
         std::cout << buf << std::endl;
+    }
+
     is.clear();
     return is;
 }
 
 int main()
 {
-    istream& is = func(std::cin);
+    istream &is = func(std::cin);
     std::cout << is.rdstate() << std::endl;
     return 0;
 }

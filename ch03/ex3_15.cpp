@@ -1,5 +1,5 @@
 //
-//@Author  @PEZY @Yue Wang 
+//@Author  @PEZY @Yue Wang
 //@Date    Aug. 2014, Jun 2015
 //@Brief
 // read a sequence of strings from cin and
@@ -9,11 +9,19 @@
 #include <iostream>
 #include <vector>
 #include <string>
+using std::cout;
+using std::endl;
 
 int main()
 {
     std::vector<std::string> vec;
-    for (std::string buffer; std::cin >> buffer; vec.push_back(buffer));
+    for (std::string buffer; std::cin >> buffer; vec.push_back(buffer))
+        ;
+
+    for (std::string mem : vec)
+    {
+        cout << mem << endl;
+    }
 
     return 0;
 }

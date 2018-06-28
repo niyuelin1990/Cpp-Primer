@@ -8,6 +8,11 @@ int sum(std::initializer_list<int> const& il)
     return sum;
 }
 
+char &get_val(std::string &str, size_t ix){
+    return str[ix];
+}
+
+
 int main(void)
 {
     auto il = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };

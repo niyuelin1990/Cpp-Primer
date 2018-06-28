@@ -75,4 +75,8 @@ inline Screen& Screen::set(pos r, pos c, char ch)
     return *this;
 }
 
+
+// Screen::pos Screen::size() const{
+//     return 1;
+// }
 #endif

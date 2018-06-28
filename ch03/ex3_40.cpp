@@ -4,13 +4,16 @@
 #include <iostream>
 #include <cstring>
 
-const char cstr1[]="Hello";
-const char cstr2[]="world!";
+// const char cstr1[]="Hello";
+// const char cstr2[]="world!";
 
 int main()
 {
-    constexpr size_t new_size = strlen(cstr1) + strlen(" ") + strlen(cstr2) +1;
-    char cstr3[new_size];
+     static const char cstr1[] = "Hi";
+    static const char cstr2[] = "frank67";
+    // constexpr size_t new_size = strlen(cstr1) + strlen(" ") + strlen(cstr2) +1;
+    // char cstr3[new_size];
+      char cstr3[strlen(cstr1) + strlen(" ") + strlen(cstr2) + 1];
     
     strcpy(cstr3, cstr1);
     strcat(cstr3, " ");

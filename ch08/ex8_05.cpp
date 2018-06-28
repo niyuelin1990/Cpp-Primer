@@ -28,7 +28,7 @@ void ReadFileToVec(const string& fileName, vector<string>& vec)
 int main()
 {
     vector<string> vec;
-    ReadFileToVec("../data/book.txt", vec);
+    ReadFileToVec("D:\\btcd\\btcctl.conf", vec);
     for (const auto &str : vec)
         cout << str << endl;
     return 0;
