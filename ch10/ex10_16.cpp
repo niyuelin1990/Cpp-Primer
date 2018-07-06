@@ -18,6 +18,13 @@ void elimdups(std::vector<std::string> &vs)
     auto new_end = std::unique(vs.begin(), vs.end());
     vs.erase(new_end, vs.end());
 }
+template<typename Sequence>
+auto println(Sequence const& seq) -> std::ostream&
+{
+    for (auto const& elem : seq) 
+        std::cout << elem << " ";
+    return std::cout << std::endl;
+}
 
 void biggies(std::vector<std::string> &vs, std::size_t sz)
 {
@@ -25,11 +32,15 @@ void biggies(std::vector<std::string> &vs, std::size_t sz)
 
     elimdups(vs);
 
+   println(vs);
+
     // sort by size, but maintain alphabetical order for same size.
     std::stable_sort(vs.begin(), vs.end(), [](string const& lhs, string const& rhs){
         return lhs.size() < rhs.size();
     });
 
+ println(vs);
+ 
     // get an iterator to the first one whose size() is >= sz
     auto wc = std::find_if(vs.begin(), vs.end(), [sz](string const& s){
             return s.size() >= sz;

@@ -37,3 +37,10 @@ std::ostream& print(std::ostream &out, const QueryResult& qr)
         out << "\t(line " << i+1 << ") " << qr.input->at(i) << std::endl;
     return out;
 }
+
+
+int main()
+{
+    /* code */
+    return 0;
+}

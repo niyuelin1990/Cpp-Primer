@@ -20,4 +20,5 @@ int main()
     StrBlobPtr iter = sb.begin();
     StrBlobPtr_pointer p(&iter);
     std::cout << p->deref() << std::endl;
+    //  std::cout << (*p) << std::endl;
 }

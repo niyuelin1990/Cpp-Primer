@@ -218,6 +218,7 @@ int main()
 
 	Test3::manip();
 	cout << endl;
+	std::operator<<(std::cout, "s");
 
 	return 0;
 }

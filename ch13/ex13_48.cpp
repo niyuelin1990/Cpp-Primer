@@ -22,6 +22,7 @@ String baz()
 
 int main()
 {
+     std::cout << "s.c_str()" << std::endl;
     char text[] = "world";
 
     String s0;
@@ -36,7 +37,8 @@ int main()
     foo("temporary");
     bar("temporary");
     String s5 = baz();
-
+ std::cout << "s.c_str()" << std::endl;
+   
     std::vector<String> svec;
     svec.reserve(8);
     svec.push_back(s0);

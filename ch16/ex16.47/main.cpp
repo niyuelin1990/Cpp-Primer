@@ -14,37 +14,53 @@
 #include <iostream>
 #include <memory>
 
-void func_lvalue(std::string& lhs, std::string& rhs)
+void func_lvalue(std::string &lhs, std::string &rhs)
 {
     lhs = "Wang\n";
     rhs = "Alan\n";
 }
 
-void func_rvalue(int&& lhs, int&& rhs)
+void func_rvalue(int &&lhs, int &&rhs)
 {
     // allocate enough space
     std::allocator<int> alloc;
-    int* data(alloc.allocate(3));
+    int *data(alloc.allocate(3));
 
     // move into the spaced newly allocated
-    alloc.construct(data    , lhs);
-    alloc.construct(data +1 , 0);
-    alloc.construct(data +2 , rhs);
+    alloc.construct(data, lhs);
+    alloc.construct(data + 1, 0);
+    alloc.construct(data + 2, rhs);
 
     // print
-    for (auto p = data; p != data + 3;  ++p)
+    for (auto p = data; p != data + 3; ++p)
         std::cout << *p << "\n";
 
     // destroy and deallocation
-    for (auto p = data +3; p != data;    )
+    for (auto p = data + 3; p != data;)
         alloc.destroy(--p);
     alloc.deallocate(data, 3);
 }
 
-template<typename F, typename T1, typename T2>
-void flip(F f, T1&& t1, T2&& t2)
+template <typename F, typename T1, typename T2>
+void flip(F f, T1 &&t1, T2 &&t2)
 {
     f(std::forward<T2>(t2), std::forward<T1>(t1));
+}
+
+template <typename T>
+typename std::remove_reference<T>::type &&move(T &&t)
+{
+    return static_cast<typename std::remove_reference<T>::type &&>(t);
+}
+
+std::string &&move_str(std::string &&ss)
+{
+    return (std::string &&)(ss);
+}
+
+std::string &&move_str2(std::string &ss)
+{
+    return (std::string &&)(ss);
 }
 
 int main()
@@ -59,5 +75,11 @@ int main()
     // test for rvalue reference
     flip(func_rvalue, 99, 88);
 
+    // string&& move(string &&t)
+    std::cout << move("asd") << std::endl;
 
+    std::cout << move_str("asd") << std::endl;
+
+    std::string ss = "aasd";
+    std::cout << move_str2(ss) << std::endl;
 }

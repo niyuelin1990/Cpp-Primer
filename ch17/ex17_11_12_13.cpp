@@ -71,7 +71,9 @@ template<std::size_t M>
 std::size_t grade(Quiz<M> const& corAns, Quiz<M> const& stuAns)
 {
     auto result = stuAns.bitquiz ^ corAns.bitquiz;
+      std::cout << result << std::endl;
     result.flip();
+     std::cout << result << std::endl;
     return result.count();
 }
 

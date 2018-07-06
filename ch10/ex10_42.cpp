@@ -7,7 +7,9 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <list>
+#include <algorithm>
 
 using std::string; using std::list;
 
@@ -15,6 +17,13 @@ void elimDups(list<string> &words)
 {
     words.sort();
     words.unique();
+}
+
+void elimdups(std::vector<std::string> &vs)
+{
+    std::sort(vs.begin(), vs.end());
+    auto new_end = std::unique(vs.begin(), vs.end());
+    vs.erase(new_end, vs.end());
 }
 
 int main()

@@ -12,7 +12,7 @@
 
 int main(void)
 {
-    HasPtr s{ "s" }, a{ "a" }, c{ "c" };
+    HasPtr s( "s" ), a{ "a" }, c{ "c" };
     std::vector<HasPtr> vec{ s, a, c };
     std::sort(vec.begin(), vec.end());
 

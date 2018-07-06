@@ -29,5 +29,9 @@ int main()
 {
     std::bitset<32> bv(1010101);
 
-    std::cout << bv << std::endl;
+    std::cout << bv <<" "<<bv.to_ulong() << std::endl;
+
+    std::bitset<64> bv2(32);
+
+    std::cout << bv2<<" "<<bv2.to_ulong() << std::endl;
 }

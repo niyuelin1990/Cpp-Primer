@@ -27,6 +27,10 @@ int main()
 
     for (auto t : v2)
         std::cout << t << " ";
+    std::cout <<"\n";
+     for (auto t : v)
+        std::cout << t << " ";
+    std::cout <<"\n";
 
 
     std::cout << v2.capacity() << "\n";

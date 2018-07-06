@@ -30,6 +30,15 @@ HasPtr& HasPtr::operator=(HasPtr rhs)
     swap(*this, rhs);
     return *this;
 }
+HasPtr& HasPtr::operator=(HasPtr &&rhs) noexcept{
+    if(this!= &rhs){
+        delete ps;
+        ps = rhs.ps;
+        rhs.ps = nullptr;
+        rhs.i = 0;
+    }
+    return *this;
+}
 
 HasPtr::~HasPtr()
 {

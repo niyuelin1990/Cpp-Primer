@@ -55,43 +55,43 @@
 #include <iostream>
 #include <string>
 
-#include "quote.h"
-#include "bulk_quote.h"
-#include "limit_quote.h"
-#include "disc_quote.h"
+// #include "quote.h"
+// #include "bulk_quote.h"
+// #include "limit_quote.h"
+// #include "disc_quote.h"
 
 class Base
 {
-public:
-    void pub_mem();   // public member
-protected:
-    int prot_mem;     // protected member
-private:
-    char priv_mem;    // private member
+  public:
+    void pub_mem(); // public member
+  protected:
+    int prot_mem; // protected member
+  private:
+    char priv_mem; // private member
 };
 
-struct Pub_Derv     : public    Base
+struct Pub_Derv : public Base
 {
     void memfcn(Base &b) { b = *this; }
 };
-struct Priv_Derv    : private   Base
+struct Priv_Derv : private Base
 {
     void memfcn(Base &b) { b = *this; }
 };
-struct Prot_Derv    : protected Base
+struct Prot_Derv : protected Base
 {
     void memfcn(Base &b) { b = *this; }
 };
 
-struct Derived_from_Public      : public Pub_Derv
+struct Derived_from_Public : public Pub_Derv
 {
     void memfcn(Base &b) { b = *this; }
 };
-struct Derived_from_Private     : public Priv_Derv
+struct Derived_from_Private : public Priv_Derv
 {
     //void memfcn(Base &b) { b = *this; }
 };
-struct Derived_from_Protected   : public Prot_Derv
+struct Derived_from_Protected : public Prot_Derv
 {
     void memfcn(Base &b) { b = *this; }
 };
@@ -115,7 +115,6 @@ int main()
 
     Derived_from_Protected dd3;
     //p = &dd3;
-
 
     return 0;
 }

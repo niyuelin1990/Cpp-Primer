@@ -114,7 +114,7 @@ protected:
 
     std::string rep() const override
     {
-        std::cout << "BinaryQuery::rep()\n";
+        std::cout << "BinaryQuery::rep() 1\n";
         return "(" + lhs.rep() + " "
                    + opSym + " "
                 + rhs.rep() + ")";

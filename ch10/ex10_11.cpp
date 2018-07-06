@@ -44,6 +44,7 @@ int main()
         "1234", "1234", "1234", "Hi", "alan", "wang"
     };
     elimdups(v);
+     println(v);
     std::stable_sort(v.begin(), v.end(), is_shorter);
     std::cout << "ex10.11 :\n";
     println(v);

@@ -35,10 +35,29 @@ void f(const X &rx, X x)
     vec.push_back(x);
 }
 
+void f1(X x){
+
+}
+void f3(const X x){
+
+}
+
+void f2(X &x){
+    
+}
+
+void f4(const X &x){
+    
+}
+
 int main()
 {
     X *px = new X;
     f(*px, *px);
+    // f1(*px);
+    // f2(*px);
+    // f3(*px);
+    f4(*px);
     delete px;
 
     return 0;

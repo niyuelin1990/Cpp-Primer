@@ -13,12 +13,16 @@
 #include <sstream>
 
 using std::string; using std::ifstream;
+using std::cout;
+using std::endl;
 
 std::map<string, string> buildMap(ifstream &map_file)
 {
     std::map<string, string> trans_map;
-    for (string key, value; map_file >> key && getline(map_file, value); )
+    for (string key, value; map_file >> key && getline(map_file, value); ){
         if (value.size() > 1) trans_map[key] = value.substr(1).substr(0, value.find_last_not_of(' '));
+        cout<< key<<" 1 "<<value<<endl;
+    }
     return trans_map;
 }
 

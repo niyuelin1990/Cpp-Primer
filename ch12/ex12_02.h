@@ -20,6 +20,7 @@ public:
 
     StrBlob():data(std::make_shared<vector<string>>()) { }
     StrBlob(std::initializer_list<string> il):data(std::make_shared<vector<string>>(il)) { }
+    // StrBlob(string &v):data(std::make_shared<vector<string>>())->push_back(v) { }
 
     size_type size() const { return data->size(); }
     bool empty() const { return data->empty(); }
@@ -40,6 +41,7 @@ public:
         return data->back();
     }
 
+    //前一个const 返回const值  后一个const必须是const类调用
     const std::string& front() const {
         check(0, "front on empty StrBlob");
         return data->front();

@@ -45,7 +45,7 @@ private:
 class derived : public base
 {
 public:
-   void print(std::ostream &os) override { base::print(os); os << " derived\n " << i; }
+   void print(std::ostream &os) override { base::print(os); os << " derived" << i<<"\n "; }
    //   ^^^^^                   ^^^^^^^^   ^^^^^^    --  added to fix this problem
    //  this print wanted to call the print from the base class.
    //  however, the class scope base:: was omitted.As a result
@@ -65,12 +65,18 @@ double print_total (std::ostream& os, const Quote& item, size_t n);
 int main()
 {
     // ex15.14
-    base bobj;
-    base *bp1 = &bobj;
-    base &br1 = bobj;
+    // base bobj;
+    // bobj.print(std::cout);
+    // base *bp1 = &bobj;
+    // base &br1 = bobj;
+    //  br1.print(std::cout);
     derived dobj;
+     dobj.print(std::cout);
     base *bp2 = &dobj;
+    bp2->print(std::cout);
+    (*bp2).print(std::cout);
     base &br2 = dobj;
+     br2.print(std::cout);
 
     // a.  this is an object, so compile time.
     //bobj.print(std::cout);

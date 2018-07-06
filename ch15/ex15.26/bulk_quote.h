@@ -43,7 +43,7 @@ public:
     double net_price(std::size_t n) const override;
     void  debug() const override;
 
-    ~Bulk_quote() override
+    ~Bulk_quote() 
     {
         std::cout << "destructing Bulk_quote\n";
     }

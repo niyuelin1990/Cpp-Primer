@@ -6,6 +6,7 @@ using std::vector; using std::sort;
 
 class Foo {
 public:
+    //无参数右值
     Foo sorted() &&;
     Foo sorted() const &;
 private:

@@ -28,14 +28,16 @@ QueryResult AndQuery::eval(const TextQuery &text) const
 QueryResult OrQuery::eval(const TextQuery &text) const
 {
     QueryResult right = rhs.eval(text), left= lhs.eval(text);
-
+    std::cout<<"OrQuery::eval"<<std::endl;
     // copy the left-hand operand into the result set
     std::shared_ptr<std::set<line_no>> ret_lines =
             std::make_shared<std::set<line_no>>(left.begin(), left.end());
-
+std::cout<<"OrQuery::eval2"<<std::endl;
+    
     // inert lines from the right-hand operand
     ret_lines->insert(right.begin(), right.end());
-
+std::cout<<"OrQuery::eval3"<<std::endl;
+    
     return QueryResult(rep(), ret_lines, left.get_file());
 }
 

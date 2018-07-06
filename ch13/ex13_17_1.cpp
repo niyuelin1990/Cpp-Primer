@@ -16,7 +16,13 @@ class numbered {
 public:
     numbered() {
         mysn = unique++;
+        std::cout << "numbered"<< std::endl;
     }
+    //  numbered(const numbered&) {
+    //     mysn = unique++;
+    //     std::cout << "const numbered"<< std::endl;
+    // }
+
 
     int mysn;
     static int unique;

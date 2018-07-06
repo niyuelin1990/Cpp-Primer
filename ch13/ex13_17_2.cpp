@@ -29,6 +29,7 @@ public:
 int numbered::unique = 10;
 
 void f(numbered s) {
+    // s.mysn++;
     std::cout << s.mysn << std::endl;
 }
 

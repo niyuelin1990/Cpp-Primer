@@ -29,6 +29,7 @@ int main()
      *          main function p will free the memory that has been freed inside process ().
      *          That's why "double freed or corruption" was generated.
      */
+    //只能指针和普通指针不能混用
     process(std::shared_ptr<int>(p.get()));
     return 0;
 }

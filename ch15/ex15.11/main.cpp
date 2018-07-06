@@ -31,6 +31,7 @@ int main()
      *  r refering to at compile time. As a result, the virtual function debug of
      *  the subobject is called.
      */
+    //非动态绑定，r已经绑定了quote的类型
     Quote& r = q;
     r.debug();
 	std::cout << "\n";

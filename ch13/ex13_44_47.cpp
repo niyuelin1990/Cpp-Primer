@@ -5,7 +5,9 @@
 std::pair<char*, char*>
 String::alloc_n_copy(const char *b, const char *e)
 {
+    //分配空间保存给定范围的原始
     auto str = alloc.allocate(e - b);
+    //由data和uninitialized_copy的返回值构成
     return{ str, std::uninitialized_copy(b, e, str) };
 }
 

@@ -119,14 +119,14 @@ namespace cp5
         //
         auto unique() const
         {
-            return 1 == *refCount;
+            return 1 == *ref_count;
         }
         //
         //  Swap
         //
         auto swap(SharedPointer& rhs)
         {
-            ::swap(*this, rhs);
+            swap(*this, rhs);
         }
         //
         // Free the object pointed to, if unique
@@ -142,7 +142,7 @@ namespace cp5
         {
             if (ptr != pointer)
             {
-                decrement_n_destroy();
+                decrement_and_destroy();
                 ptr = pointer;
                 ref_count = new std::size_t(1);
             }

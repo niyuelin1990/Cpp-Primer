@@ -17,7 +17,9 @@ If you have questions, try to connect with me: pezy<urbancpz@gmail.com>
 #include <iostream>
 
 class Sales_data {
+    //输入
     friend std::istream& operator>>(std::istream&, Sales_data&);
+    //输出
     friend std::ostream& operator<<(std::ostream&, const Sales_data&);
     friend Sales_data operator+(const Sales_data&, const Sales_data&);
 

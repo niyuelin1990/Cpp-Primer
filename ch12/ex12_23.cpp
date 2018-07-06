@@ -9,14 +9,21 @@
 
 #include <iostream>
 #include <string>
-#include <string.h>
+// #include <string.h>
 
 int main()
 {
+
+    const char *c1 = "hello ";
+    const char *c2 = "world";
+
     // dynamically allocated array of char
     char *concatenate_string = new char[strlen("hello " "world") + 1]();
-    strcat(concatenate_string, "hello ");
-    strcat(concatenate_string, "world");
+    // strcat(concatenate_string, "hello ");
+    // strcat(concatenate_string, "world");
+    strcpy(concatenate_string, c1);
+    strcat(concatenate_string, c2);
+
     std::cout << concatenate_string << std::endl;
     delete [] concatenate_string;
     

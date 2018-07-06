@@ -10,7 +10,10 @@
 #include <vector>
 #include <list>
 
-using std::list; using std::vector; using std::cout; using std::endl;
+using std::cout;
+using std::endl;
+using std::list;
+using std::vector;
 
 int main()
 {
@@ -19,16 +22,23 @@ int main()
 
     // from list<int> to vector<double>
     vector<double> dvc(ilst.begin(), ilst.end());
-    for (auto i : ilst) cout << i << " ";
+    for (auto i : ilst)
+    {
+        cout << i << " ";
+    }
     cout << endl;
-    for (auto d : dvc) cout << d << " ";
+    for (auto d : dvc)
+        cout << d << " ";
     cout << endl;
 
     // from vector<int> to vector<double>
-    vector<double> dvc2(ivc.begin(), ivc.end());
-    for (auto i : ivc) cout << i << " ";
+    vector<double>
+        dvc2(ivc.begin(), ivc.end());
+    for (auto i : ivc)
+        cout << i << " ";
     cout << endl;
-    for (auto d : dvc2) cout << d << " ";
+    for (auto d : dvc2)
+        cout << d << " ";
 
     return 0;
 }

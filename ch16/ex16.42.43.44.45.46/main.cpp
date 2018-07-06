@@ -87,5 +87,5 @@ void g(T&& val)
 int main()
 {
     std::allocator a;
-    a.construct
+    // a.construct
 }

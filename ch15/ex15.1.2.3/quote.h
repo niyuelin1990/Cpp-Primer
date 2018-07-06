@@ -12,7 +12,7 @@ public:
 
     std::string     isbn() const { return bookNo; }
     virtual double  net_price(std::size_t n) const { return n * price; }
-
+    // 对析构函数动态绑定
     virtual ~Quote() = default;
 
 private:

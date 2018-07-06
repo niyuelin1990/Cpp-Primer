@@ -44,6 +44,6 @@ void wordTransformation()
 
 int main()
 {
-    //wordCounting();
-    wordTransformation();
+    wordCounting();
+    // wordTransformation();
 }

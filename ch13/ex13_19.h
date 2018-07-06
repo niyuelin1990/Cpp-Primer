@@ -14,12 +14,15 @@
 #define CP5_ex13_19_h
 
 #include <string>
+
+#include <iostream>
 using std::string;
 
 class Employee {
 public:
     Employee();
     Employee(const string &name);
+    // 会无法拷贝
     Employee(const Employee&) = delete;
     Employee& operator=(const Employee&) = delete;
 
@@ -30,5 +33,16 @@ private:
     int id_;
     static int s_increment;
 };
+Employee::Employee() {
+    id_ = s_increment++;
+    std::cout << "Employee()" << std::endl;
+}
+
+Employee::Employee(const string &name) {
+    id_ = s_increment++;
+    name_ = name;
+    std::cout << "Employee(const)" << std::endl;
+}
+
 
 #endif

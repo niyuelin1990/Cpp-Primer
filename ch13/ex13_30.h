@@ -26,6 +26,14 @@ public:
         ps = new_p;
         i = hp.i;
         return *this;
+    
+    }
+    HasPtr& operator=(const std::string &s) {
+        delete ps;
+        ps = new std::string(s);
+        i = 0;
+        return *this;
+    
     }
     ~HasPtr() {
         delete ps;

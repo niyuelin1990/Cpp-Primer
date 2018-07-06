@@ -38,8 +38,18 @@ int main()
 
     // 10.36
     std::list<int> lst = { 1, 2, 3, 4, 0, 5, 6 };
-    auto found_0 = std::find(lst.crbegin(), lst.crend(), 0);
-    std::cout << std::distance(found_0, lst.crend()) << std::endl;
+    auto found_0 = std::find(lst.crbegin(), lst.crend(), 1);
+    // std::cout << std::distance(found_0, lst.crend()) << std::endl;
+    found_0++;
+    int p = 1;
+    for(auto iter = lst.begin();iter!=found_0.base();iter++,p++);
+    if(p>= lst.size()){
+        std::cout<<"not fount"<<std::endl;
+    }else{
+        std::cout <<*found_0.base()<< std::endl;
+        std::cout <<p<< std::endl;
+    }
+
 
     // 10.37
     std::list<int> ret_lst(8 - 3);

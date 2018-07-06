@@ -65,11 +65,13 @@ std::string debug_rep(const std::string &s)
 // convert the character pointers to string and call the string version of debug_rep
 std::string debug_rep(char *p)
 {
+     std::cout<<"asda"<<std::endl;
     return debug_rep(std::string(p));
 }
 
 std::string debug_rep(const char *p)
 {
+    std::cout<<"asasda"<<std::endl;
     return debug_rep(std::string(p));
 }
 
@@ -104,6 +106,14 @@ std::ostream& errorMsg(std::ostream& os, const Args... rest)
 
 int main()
 {
-    errorMsg(std::cout, 1, 2, 3, 4, 9.0f, "sss", "alan");
+    int in = 111;
+    int *p = &in;
+    char c = 'a';
+    char *cc = &c;
+    const char *cc2 = &c;
+    errorMsg(std::cout, 1, 2, 3, 4, 9.0f, "sss", "alan", in, p);
+    std::cout<<std::endl;
+     errorMsg(std::cout, c, cc, 'a', cc2);
+    
     return 0;
 }

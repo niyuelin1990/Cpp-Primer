@@ -17,7 +17,7 @@ using std::string;
 
 int main()
 {
-    std::ifstream ifs("../data/book.txt");
+    std::ifstream ifs("/Users/niyuelin/WorkFile/es/test.txt");
     std::istream_iterator<string> in(ifs), eof;
     std::vector<string> vec;
     std::copy(in, eof, back_inserter(vec));

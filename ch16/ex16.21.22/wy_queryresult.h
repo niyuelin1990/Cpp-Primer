@@ -15,7 +15,7 @@
 
 #ifndef WY_QUERYRESULT_H
 #define WY_QUERYRESULT_H
-#include <wy_textquery.h>
+#include "wy_textquery.h"
 
 class wy_queryResult
 {

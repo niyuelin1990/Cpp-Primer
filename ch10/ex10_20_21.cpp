@@ -29,7 +29,7 @@ using std::string;
 // Exercise 10.20
 std::size_t bigerThan6(vector<string> const& v)
 {
-    return count_if(v.cbegin(), v.cend(), [](string const& s){
+    return count_if(v.cbegin(), v.cend(), [](string const& s) ->int{
         return s.size() > 6;
     });
 }
@@ -45,7 +45,7 @@ int main()
 
     // ex10.21
     int i = 7;
-    auto check_and_decrement = [&i]() { return i > 0 ? !--i : !i; };
+    auto check_and_decrement = [&i]() -> int { return i > 0 ? !--i : !i; };
     std::cout << "ex10.21: ";
     while(!check_and_decrement())
         std::cout << i << " ";

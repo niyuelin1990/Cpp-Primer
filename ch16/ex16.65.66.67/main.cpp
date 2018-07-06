@@ -41,10 +41,63 @@ std::string debug_rep(const char* str);
 template<>
 std::string debug_rep(      char *str);
 
+template <typename T>
+std::string debug_rep(T& t){
+  std::cout <<  "T& t \n";
+    std::ostringstream ret;
+    ret << t;
+    return ret.str();
+}
+
+template <typename T>
+std::string debug_rep(const T& t){
+  std::cout <<  "const T& t \n";
+    std::ostringstream ret;
+    ret << t;
+    return ret.str();
+}
+
+// template <typename T>
+// std::string debug_rep(T&& t){
+//   std::cout <<  "T&& t \n";
+//     std::ostringstream ret;
+//     ret << t;
+//     return ret.str();
+// }
+
+template<>
+std::string debug_rep(      std::string *str){
+      std::cout <<  "std::string *str \n";
+    std::ostringstream ret;
+    ret << *str;
+    return ret.str();
+}
+
+
+
 int main()
 {
     char p[] = "alan";
     std::cout << debug_rep(p) << "\n";
+
+    const char *p2 = "alan2";
+    std::cout << debug_rep(p2) << "\n";
+
+    const char p3[] = "alan3";
+    std::cout << debug_rep(p3) << "\n";
+
+    std::string ss = "asd";
+    std::cout << debug_rep(&ss) << "\n";
+   
+    std::string *s2 = &ss;
+    std::cout << debug_rep(s2) << "\n";
+    const std::string *s3 = &ss;
+    std::cout << debug_rep(s3) << "\n";
+
+    std::cout << debug_rep("as") << "\n";
+    std::cout << debug_rep(111) << "\n";
+    // std::cout << debug_rep(ss) << "\n";
+
     return 0;
 }
 
@@ -52,6 +105,7 @@ int main()
 template <typename T>
 std::string debug_rep(T* t)
 {
+    std::cout <<  "T* t \n";
     std::ostringstream ret;
     ret << t;
     return ret.str();
@@ -62,6 +116,7 @@ std::string debug_rep(T* t)
 template<>
 std::string debug_rep(const char* str)
 {
+    std::cout <<  "const char* str \n";
     std::string ret(str);
     return str;
 }
@@ -71,6 +126,7 @@ std::string debug_rep(const char* str)
 template<>
 std::string debug_rep(      char *str)
 {
+    std::cout <<  "char *str \n";
     std::string ret(str);
     return ret;
 }
